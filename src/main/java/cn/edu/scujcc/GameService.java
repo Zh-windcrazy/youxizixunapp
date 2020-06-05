@@ -8,9 +8,11 @@ import org.springframework.stereotype.Service;
 
 import ch.qos.logback.classic.Logger;
 
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Service
 public class GameService {
+	@Autowired
 	private GameRepository repo;
 	public static final Logger logger = (Logger) LoggerFactory.getLogger(GameService.class);
 	
@@ -32,7 +34,7 @@ public class GameService {
 	 * 获取所有游戏
 	 */
 	public List<Game> getAllGames(){
-		logger.debug("准备从数据库读取所有频道信息...");
+		logger.debug("准备从数据库读取所有游戏信息...");
 		return repo.findAll();
 	}
 	
@@ -69,8 +71,12 @@ public class GameService {
 	/**
 	 * 创建
 	 */
-	public Game createChannel(Game c) {
+	public Game createGame(Game c) {
 		return repo.save(c);
 		
+	}
+	
+	public List<Game> searchbiaoti(String title){
+		return repo.findByTitle(title);
 	}
 }
