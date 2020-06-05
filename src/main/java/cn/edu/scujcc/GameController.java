@@ -73,7 +73,7 @@ public class GameController {
 	 * 新建一个游戏
 	 */
 	@PostMapping
-	public Game createChannel(@RequestBody Game c) {
+	public Game createGame(@RequestBody Game c) {
 		System.out.println("即将新建游戏，游戏数据："+c);
 		Game saved=service.createGame(c);
 		return saved;

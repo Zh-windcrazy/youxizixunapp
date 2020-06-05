@@ -2,8 +2,15 @@ package cn.edu.scujcc;
 
 import java.io.Serializable;
 
+import org.springframework.data.annotation.Id;
+
 
 public class Game implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -9150433363673996032L;
+	@Id
 	private String id;
 	private String title;
 	private String cover;
