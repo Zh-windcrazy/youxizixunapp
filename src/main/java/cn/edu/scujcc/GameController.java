@@ -33,7 +33,7 @@ public class GameController {
 	 * 获取所有游戏
 	 */
 	@GetMapping()
-	public List<Game> getAllChannels() {
+	public List<Game> getAllGames() {
     	logger.info("正在读取所有游戏信息...");
     	List<Game> results = service.getAllGames();
     	
