@@ -11,9 +11,6 @@ public class User {
 	private String password;
 	private String phone;
 	private String gender;
-	private Date birthday;
-	private Date lastLogin;
-	private String lastIp;
 	public String getId() {
 		return id;
 	}
@@ -44,42 +41,19 @@ public class User {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	public Date getBirthday() {
-		return birthday;
-	}
-	public void setBirthday(Date birthday) {
-		this.birthday = birthday;
-	}
-	public Date getLastLogin() {
-		return lastLogin;
-	}
-	public void setLastLogin(Date lastLogin) {
-		this.lastLogin = lastLogin;
-	}
-	public String getLastIp() {
-		return lastIp;
-	}
-	public void setLastIp(String lastIp) {
-		this.lastIp = lastIp;
-	}
+
 	@Override
 	public String toString() {
 		return "User [" + (id != null ? "id=" + id + ", " : "")
 				+ (username != null ? "username=" + username + ", " : "")
 				+ (password != null ? "password=" + password + ", " : "")
-				+ (phone != null ? "phone=" + phone + ", " : "") + (gender != null ? "gender=" + gender + ", " : "")
-				+ (birthday != null ? "birthday=" + birthday + ", " : "")
-				+ (lastLogin != null ? "lastLogin=" + lastLogin + ", " : "")
-				+ (lastIp != null ? "lastIp=" + lastIp : "") + "]";
+				+ (phone != null ? "phone=" + phone + ", " : "") + (gender != null ? "gender=" + gender + ", " : "");
 	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((birthday == null) ? 0 : birthday.hashCode());
 		result = prime * result + ((gender == null) ? 0 : gender.hashCode());
-		result = prime * result + ((lastIp == null) ? 0 : lastIp.hashCode());
-		result = prime * result + ((lastLogin == null) ? 0 : lastLogin.hashCode());
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
 		result = prime * result + ((phone == null) ? 0 : phone.hashCode());
 		result = prime * result + ((username == null) ? 0 : username.hashCode());
@@ -94,25 +68,11 @@ public class User {
 		if (getClass() != obj.getClass())
 			return false;
 		User other = (User) obj;
-		if (birthday == null) {
-			if (other.birthday != null)
-				return false;
-		} else if (!birthday.equals(other.birthday))
-			return false;
+		
 		if (gender == null) {
 			if (other.gender != null)
 				return false;
 		} else if (!gender.equals(other.gender))
-			return false;
-		if (lastIp == null) {
-			if (other.lastIp != null)
-				return false;
-		} else if (!lastIp.equals(other.lastIp))
-			return false;
-		if (lastLogin == null) {
-			if (other.lastLogin != null)
-				return false;
-		} else if (!lastLogin.equals(other.lastLogin))
 			return false;
 		if (password == null) {
 			if (other.password != null)
